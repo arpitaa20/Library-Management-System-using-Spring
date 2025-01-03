@@ -9,5 +9,4 @@ public class LibraryManagementSystemUsingSpringApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryManagementSystemUsingSpringApplication.class, args);
 	}
-
 }

@@ -1,6 +1,5 @@
 package jsp.Spring.Entity;
 
-
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -29,36 +28,45 @@ public class Book {
 	
 	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
 	@JsonIgnore
-	private List<Loan> loans;
-	public Author getA() {
-		return author;
-	}
-	public void setA(Author a) {
-		this.author = author;
-	}
-	public List<Loan> getLoans() {
-		return loans;
-	}
-	public void setLoans(List<Loan> loans) {
-		this.loans = loans;
-	}
+	private List<Loan> loan;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getGenre() {
 		return genre;
 	}
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+	public List<Loan> getLoan() {
+		return loan;
+	}
+
+	public void setLoan(List<Loan> loan) {
+		this.loan = loan;
+	}	
 }

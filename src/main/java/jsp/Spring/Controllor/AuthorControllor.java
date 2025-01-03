@@ -3,7 +3,6 @@ package jsp.Spring.Controllor;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,22 +30,22 @@ public class AuthorControllor {
 		return authorService.saveAuthor(author);
 	}
 	
-	@GetMapping("/allauthor")
+	@GetMapping
 	public ResponseEntity<ResponseStructure<List<Author>>> getAllAuthor(){
 		return authorService.getAllAuthor();
 	}
 	
-	@GetMapping("/getauthor/{id}")
+	@GetMapping("/id")
 	public ResponseEntity<ResponseStructure<Author>> getAuthorById(@PathVariable int id){
 		return authorService.getAuthorById(id);
 	}
 	
-	@DeleteMapping("/deleteauthor/{id}")
+	@DeleteMapping("/id")
 	public ResponseEntity<ResponseStructure<Author>> deleteAuthorById(@PathVariable int id){
 		return authorService.deleteAuthorById(id);
 	}
 	
-	@PutMapping("/updateauthor")
+	@PutMapping
 	public ResponseEntity<ResponseStructure<Author>> updateAuthor(@RequestBody Author author){
 		return authorService.updateAuthor(author);
 	}

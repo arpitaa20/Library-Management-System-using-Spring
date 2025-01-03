@@ -11,60 +11,60 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Loan {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	private LocalDate localDate;
-	private LocalDate returnDate;
-	
-	@ManyToOne
-	@JoinColumn(name="book_id")
-	private Book book;
-	
-	@ManyToOne
-	@JoinColumn(name="member_id")
-	private Member member;
 
-	public int getId() {
-		return id;
-	}
+		@Id
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
+		private int id;
+		private LocalDate loanDate;
+		private LocalDate returnDate;
+		
+		@ManyToOne
+		@JoinColumn(name="book_id")
+		private Book book;
+		
+		@ManyToOne
+		@JoinColumn(name="member_id")
+		private Member member;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+		
+		public int getId() {
+			return id;
+		}
 
-	public LocalDate getLd() {
-		return localDate;
-	}
+		public void setId(int id) {
+			this.id = id;
+		}
 
-	public void setLd(LocalDate ld) {
-		this.localDate = localDate;
-	}
+		public LocalDate getLoanDate() {
+			return loanDate;
+		}
 
-	public LocalDate getRd() {
-		return returnDate;
-	}
+		public void setLoanDate(LocalDate loanDate) {
+			this.loanDate = loanDate;
+		}
 
-	public void setRd(LocalDate rd) {
-		this.returnDate = returnDate;
-	}
+		public LocalDate getReturnDate() {
+			return returnDate;
+		}
 
-	public Book getBook() {
-		return book;
-	}
+		public void setReturnDate(LocalDate returnDate) {
+			this.returnDate = returnDate;
+		}
 
-	public void setBook(Book book) {
-		this.book = book;
-	}
+		public Book getBook() {
+			return book;
+		}
 
-	public Member getM() {
-		return member;
-	}
+		public void setBook(Book book) {
+			this.book = book;
+		}
 
-	public void setM(Member m) {
-		this.member = member;
-	}
-	
+		public Member getMember() {
+			return member;
+		}
+
+		public void setMember(Member member) {
+			this.member = member;
+		}
 
 }
